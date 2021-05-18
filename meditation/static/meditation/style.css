@@ -1,0 +1,379 @@
+/*80% — CC*/
+/*75% — BF*/
+/*70% — B3*/
+/*65% — A6*/
+/*60% — 99*/
+/*55% — 8C*/
+/*50% — 80*/
+/*45% — 73*/
+/*40% — 66*/
+/*35% — 59*/
+/*30% — 4D*/
+:root {
+    --border-panel-weight: 1px;
+    --panel-padding: 5px;
+    --top-margin: 10px;
+    --left-margin: 16px;
+    --right-margin: 16px;
+    --bottom-margin: 10px;
+    --left-width: 20vw;
+    --right-width: 15vw;
+    --middle-panel-width: 17.5vw;
+    --header-height: 80px;
+    --music-tab-height: 50px;
+    --music-player-height: 160px;
+    --breath-control-height: 100px;
+    --breath-control-width: 17.5vw;
+    --sound-panel-height: 150px;
+
+    --brand-img-size: 60px;
+    --social-ing-size: 40px;
+
+    --border-panel-color: #999999;
+    --background-panel-opacity: 0.5;
+    --border-panel-radius: 5px;
+
+    --black-50-trans-color: #00000080;
+
+    --margin-right-panel: 5px;
+    --text-padding: 3px;
+    --item-list-padding: 3px;
+}
+
+html, body {
+    margin: 0;
+    color: white;
+    font-family: "Montserrat Light", "Helvetica", "sans-serif";
+    font-size: 8px;
+}
+
+h1, h2, h3 {
+    margin: 0px;
+    padding: var(--text-padding);
+}
+
+.header .branding-img {
+    margin-top: var(--top-margin);
+    margin-left: var(--left-margin);
+    height: var(--brand-img-size);
+    width: var(--brand-img-size);
+}
+
+.header .social-img {
+    margin-top: 20px;
+    height: var(--social-ing-size);
+    width: var(--social-ing-size);
+    margin-right: var(--right-margin);
+    float: right;
+}
+
+body {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;
+
+}
+
+.header {
+    height: var(--header-height);
+    float: top;
+}
+
+.left-panel {
+    float: left;
+    height: calc(100vh - var(--header-height) - var(--bottom-margin));
+    width: var(--left-width);
+    overflow: hidden;
+    margin-left: var(--left-margin);
+
+    border-radius: var(--border-panel-radius);
+    border: var(--border-panel-weight) solid var(--border-panel-color);
+    background-color: var(--black-50-trans-color);
+}
+
+.music-tab {
+    height: 30px;
+    padding: var(--panel-padding) calc(2 * var(--panel-padding)) var(--panel-padding);
+}
+
+.music-list {
+    margin-right: var(--margin-right-panel);
+    padding: var(--panel-padding) var(--panel-padding) var(--panel-padding) calc(2 * var(--panel-padding));
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100% - var(--music-tab-height) - var(--music-player-height));
+}
+
+.right-panel {
+    float: right;
+    width: var(--right-width);
+    margin-right: var(--right-margin);
+    height: calc(100vh - var(--header-height) - var(--bottom-margin));
+}
+
+.mid-panel {
+    float: left;
+    width: calc(100% - var(--left-width) - var(--right-width) - var(--left-margin) - var(--right-margin) - 2 * var(--border-panel-weight));
+    height: calc(100vh - var(--header-height) - var(--bottom-margin));
+}
+
+.breath-panel {
+    height: var(--breath-control-height);
+    width: var(--breath-control-width);
+    margin-left: calc((100% - var(--breath-control-width)) / 2);
+    border-top-left-radius: calc(var(--breath-control-width) / 2);
+    border-top-right-radius: calc(var(--breath-control-width) / 2);
+    background-color: var(--black-50-trans-color);
+    border: var(--border-panel-weight) solid var(--border-panel-color);
+}
+
+.top-mid-panel {
+    height: calc(100% - var(--breath-control-height));
+}
+
+.top-right-panel {
+    height: calc(100% - var(--sound-panel-height));
+}
+
+.bottom-right-panel {
+    border-radius: var(--border-panel-radius);
+    border: var(--border-panel-weight) solid var(--border-panel-color);
+    background-color: var(--black-50-trans-color);
+}
+
+.sound-tab {
+    height: 40px;
+}
+
+.sound-list {
+    height: calc(var(--sound-panel-height) - 40px);
+    overflow-y: scroll;
+}
+
+/*Scrollbar Style*/
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 1.5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: whitesmoke;
+}
+
+/*End Scrollbar Style*/
+
+/*List*/
+.list-item {
+    padding: var(--item-list-padding);
+}
+
+.list-group-item {
+    background-color: var(--black-50-trans-color);
+    color: whitesmoke;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.list-group-item.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.truncate {
+    text-overflow: ellipsis;
+    /* Needed to make it work */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*End List*/
+
+
+/*Player Music*/
+/* Using flex with the column direction to
+   align items in a vertical direction */
+.player {
+    align-items: center;
+    justify-content: center;
+}
+
+.player-header {
+    display: flex;
+    flex-direction: row;
+    padding-left: calc(2 *var(--panel-padding));
+    height: 80px;
+    align-items: center;
+}
+
+.track-art {
+    margin-right: 10px;
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    background-image: url("https://source.unsplash.com/Qrspubmx6kE/640x360");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15%;
+}
+
+/* Changing the font sizes to suitable ones */
+.now-playing {
+    font-size: 1rem;
+}
+
+.track-name {
+    font-size: 2rem;
+}
+
+.track-artist {
+    font-size: 1.2rem;
+}
+
+/* Using flex with the row direction to
+   align items in a horizontal direction */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+}
+.player-btn{
+}
+
+.playpause-track,
+.prev-track,
+.next-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:33.33%;
+    opacity: 0.9;
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+}
+
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+    opacity: 8.0;
+}
+
+/* Define the slider width so that it scales properly */
+.slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: darkgray;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover,
+.volume_slider:hover {
+    opacity: 1.0;
+}
+
+.seek_slider {
+    width: 70%;
+}
+
+.volume_slider {
+    width: 30%;
+}
+
+.current-time,
+.total-duration {
+    padding: 10px;
+    width: 45px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+    padding: 10px;
+}
+
+/* Change the mouse cursor to a pointer
+   when hovered over */
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+    cursor: pointer;
+}
+
+/*End player Music*/
+
+/*   sm: 576px,*/
+/*md: 768px,*/
+/*lg: 992px,*/
+/*xl: 1200px,*/
+/*xxl: 1400px*/
+@media only screen and (max-width: 576px) {
+    :root {
+        --brand-img-size: 40px;
+        --social-ing-size: 30px;
+        --top-margin: 5px;
+        --left-margin: 8px;
+        --right-margin: 8px;
+        --bottom-margin: 5px;
+    }
+
+    .header .branding-img {
+        margin-top: 20px;
+    }
+
+    .header .social-img {
+        margin-top: 25px;
+    }
+}

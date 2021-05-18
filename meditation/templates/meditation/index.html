@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static %}
+    {# Load the tag library #}
+    {% load bootstrap5 %}
+    {% load fontawesome_5 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    {% fontawesome_5_static %}
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'meditation/style.css' %}">
+
+    <script src="{% static 'meditation/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'meditation/app.js' %}"></script>
+
+    <script>
+
+        var static_url = "{% get_static_prefix %}";
+        var media_url = "{% get_media_prefix %}";
+        var songs = [];
+
+    </script>
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-57x57.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-114x114.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-72x72.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-144x144.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-60x60.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-120x120.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-76x76.png' %}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          href="{% static 'meditation/images/favicon/apple-touch-icon-152x152.png' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'meditation/images/favicon/favicon-196x196.png' %}"
+          sizes="196x196"/>
+    <link rel="icon" type="image/png" href="{% static 'meditation/images/favicon/favicon-96x96.png' %}" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="{% static 'meditation/images/favicon/favicon-32x32.png' %}" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{% static 'meditation/images/favicon/favicon-16x16.png' %}" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="{% static 'meditation/images/favicon/favicon-128.png' %}" sizes="128x128"/>
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="{% static 'meditation/images/favicon/mstile-144x144.png' %}"/>
+    <meta name="msapplication-square70x70logo" content="{% static 'meditation/images/favicon/mstile-70x70.png' %}"/>
+    <meta name="msapplication-square150x150logo" content="{% static 'meditation/images/favicon/mstile-150x150.png' %}"/>
+    <meta name="msapplication-wide310x150logo" content="{% static 'meditation/images/favicon/mstile-310x150.png' %}"/>
+    <meta name="msapplication-square310x310logo" content="{% static 'meditation/images/favicon/mstile-310x310.png' %}"/>
+
+    <title>Chào mừng bạn đến với Thiền Định Online - Website được phát triển bởi Thiền Định TV Channel | Chúc bạn một
+        ngày tốt
+        lành và có những giây phút Thư giãn</title>
+</head>
+<body>
+
+<div class="header">
+    <img class="branding-img" src="{% static 'meditation/images/branding-image.svg' %}">
+    <img class="social-img" src="{% static 'meditation/images/facebook.svg' %}">
+    <img class="social-img" src="{% static 'meditation/images/youtube.svg' %}">
+</div>
+
+<div class="left-panel">
+    <div class="music-tab">
+        <h1 class="text_title">Âm nhạc</h1>
+    </div>
+    <div class="music-list">
+        {% if data %}
+            <div class="list-group">
+
+                {% for song in data.songs %}
+                    <a id="{{ forloop.counter }}" class="list-group-item list-group-item-action"
+                       aria-current="true">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h2 class="mb-1">{{ song.name }}</h2>
+                            <h4>{{ song.length_text }}</h4>
+                        </div>
+                        <h3 class="mb-1">{{ song.artis }}</h3>
+                        <script>
+                            songs.push({
+                                name: "{{song.name}}",
+                                source: "{{ song.source }}",
+                                length: "{{ song.length_text }}",
+                                artist: "{{ song.artis }}",
+                                image: "{% static 'meditation/images/thumbnail-player.jpg' %}"
+                            })
+                        </script>
+                    </a>
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </div>
+    <div class="player">
+        <!-- Define the section for displaying details -->
+        <div class="player-header">
+            <div class="track-art"></div>
+            <div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+        </div>
+
+        <!-- Define the section for displaying track buttons -->
+        <div class="buttons">
+            <div class="prev-track player-btn">
+                <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+            <div class="playpause-track player-btn">
+                <i class="fa fa-play-circle fa-4x"></i>
+            </div>
+            <div class="next-track player-btn">
+                <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+        </div>
+
+        <!-- Define the section for displaying the seek slider-->
+        <div class="slider_container">
+            <div class="current-time">00:00</div>
+            <input class="seek_slider" type="range" min="1" max="100"
+                   value="0">
+            <div class="total-duration">00:00</div>
+        </div>
+
+        <!-- Define the section for displaying the volume slider-->
+        <div class="slider_container">
+            <i class="fa fa-volume-down"></i>
+            <input type="range" min="1" max="100"
+                   value="100" class="volume_slider">
+            <i class="fa fa-volume-up"></i>
+        </div>
+    </div>
+
+</div>
+</div>
+
+{#<div class="right-panel">#}
+{#    <div class="top-right-panel">#}
+{#    </div>#}
+{#    <div class="bottom-right-panel">#}
+{#        <div class="sound-tab">#}
+{#            <h1>Âm thanh nền</h1>#}
+{#        </div>#}
+{##}
+{#        <div class="sound-list">#}
+{#            <h2>Birds</h2>#}
+{#            <h2>Water Flow</h2>#}
+{#            <h2>Animals</h2>#}
+{#            <h2>Waves</h2>#}
+{#            <h2>Waves</h2>#}
+{#            <h2>Waves</h2>#}
+{#            <h2>Waves</h2>#}
+{#            <h2>Waves</h2>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#</div>#}
+
+{#<div class="mid-panel">#}
+{#    <div class="top-mid-panel">#}
+{##}
+{#    </div>#}
+{#    <div class="breath-panel">#}
+{#        <h1>Hoi tho deu</h1>#}
+{#        <h2>nhe nhang tho nao</h2>#}
+{#    </div>#}
+{##}
+{#</div>#}
+
+{#<div class="bg"></div>#}
+{#<img class="bg" src="{% static 'meditation/images/background.jpg' %}" alt="my background">#}
+
+{#{% if latest_question_list %}#}
+{#    <ul>#}
+{#        {% for question in latest_question_list %}#}
+{#            <li><a href="{% url 'meditation:detail' question.id %}">{{ question.question_text }}</a></li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#{% else %}#}
+{#    <p>No polls are available.</p>#}
+{#{% endif %}#}
+
+</body>
+</html>
