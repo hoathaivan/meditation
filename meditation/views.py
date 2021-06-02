@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect
@@ -6,10 +6,18 @@ from django.template import loader
 from django.urls import reverse
 # from .models import Article
 from . import models
-from .models import Question, Choice, Song
+from .models import *
+from django.contrib.auth.decorators import login_required
 
 from django.http import Http404
 from django.views import generic
+from .forms import PostForm
+from .filters import PostFilter
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
 
 
 class IndexView(generic.ListView):
@@ -18,8 +26,96 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return {
-            'songs': Song.objects.all()
+            'posts': Post.objects.filter(active=True, featured=True)[0:3],
+            'songs': Song.objects.all(),
+            'sounds': Sound.objects.all()
         }
+
+
+def posts(request):
+    posts_db = Post.objects.filter(active=True)
+    my_filter = PostFilter(request.GET, queryset=posts_db)
+    posts_db = my_filter.qs
+
+    page = request.GET.get('page')
+    paginator = Paginator(posts_db, 2)
+
+    try:
+        posts_db = paginator.page(page)
+    except PageNotAnInteger:
+        posts_db = paginator.page(1)
+    except EmptyPage:
+        posts_db = paginator.page(paginator.num_pages)
+
+    context = {
+        'posts': posts_db,
+        'my_filter': my_filter
+    }
+    return render(request, 'meditation/posts.html', context)
+
+
+def post(request, slug):
+    post_db = Post.objects.get(slug=slug)
+    context = {
+        'post': post_db
+    }
+    return render(request, 'meditation/post.html', context)
+
+
+@login_required(login_url='meditation:index')
+def create_post(request):
+    form = PostForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('meditation:posts')
+
+    context = {'form': form}
+    return render(request, 'meditation/post_form.html', context)
+
+
+@login_required(login_url='meditation:index')
+def update_post(request, slug):
+    post_db = Post.objects.get(slug=slug)
+    form = PostForm(instance=post_db)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post_db)
+        if form.is_valid():
+            form.save()
+        return redirect('meditation:posts')
+
+    context = {'form': form}
+    return render(request, 'meditation/post_form.html', context)
+
+
+@login_required(login_url='meditation:index')
+def delete_post(request, slug):
+    post_db = Post.objects.get(slug=slug)
+    if request.POST == 'POST':
+        post_db.delete()
+        return redirect('meditation:posts')
+    context = {'item': post_db}
+    return render(request, 'meditation/delete_post.html', context)
+
+
+def send_email(request):
+    if request.method == 'POST':
+        template = render_to_string('meditation/email_template.html', {
+            'name': request.POST['name'],
+            'email': request.POST['email'],
+            'message': request.POST['message']
+        })
+
+        email = EmailMessage(
+            request.POST['subject'],
+            template,
+            settings.EMAIL_HOST_USER,
+            ['thiendinhonline@gmail.com']
+        )
+        email.fail_silently = False
+        email.send()
+    return render(request, 'meditation/email_sent.html')
 
 
 class DetailView(generic.DetailView):

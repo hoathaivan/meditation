@@ -1,0 +1,14 @@
+{% extends 'meditation/base/main.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="main-container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want tp delete {{ item }} ? </p>
+            <a class="btn btn-primary" href="{% url 'meditation:posts' %}">&laquo Back to Posts</a>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </form>
+    </div>
+
+{% endblock content %}

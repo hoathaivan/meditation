@@ -1,0 +1,15 @@
+:root {
+    /*Content*/
+
+    --main-text-color: black;
+    --secondary-text-color: #4b5156;
+    --main-color: #eaeaea;
+    --secondary-color: #ffffff;
+
+    --border-color: #c1c1c1;
+    --theme-dot-border: #24292e;
+    --preview-bg: rgba(251, 249, 243, 0.8);
+    --preview-shadow: #f0ead6;
+
+    --btn-color: black;
+}

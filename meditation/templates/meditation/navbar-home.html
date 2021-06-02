@@ -1,0 +1,13 @@
+<div class="nav-wrapper">
+    <div class="dots-wrapper">
+        <div id="dot-1" class="browser-dot"></div>
+        <div id="dot-2" class="browser-dot"></div>
+        <div id="dot-3" class="browser-dot"></div>
+    </div>
+    <ul id="navigation">
+        <li><a href="{% url 'meditation:index' %}">Góp ý/bình luận</a></li>
+        {% if  request.user.is_authenticated %}
+            {#            <li><a href="{% url 'meditation:create_post' %}">Create post</a></li>#}
+        {% endif %}
+    </ul>
+</div>
