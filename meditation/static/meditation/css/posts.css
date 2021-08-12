@@ -1,0 +1,11 @@
+#div_id_tags, #id_tags {
+    overflow-y: scroll;
+    max-height: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #888;
+}
+
+#search-form .form-group {
+    margin-bottom: 11px;
+}

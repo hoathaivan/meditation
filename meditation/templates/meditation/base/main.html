@@ -12,7 +12,6 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <!--    Display django.contrib.messages as Bootstrap alerts-->
-    {% bootstrap_messages %}
 
     {% load fontawesome_5 %}
     {% fontawesome_5_static %}
@@ -22,10 +21,6 @@
     <script src="{% static 'meditation/js/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'meditation/js/lodash.js' %}"></script>
     <script src="{% static 'meditation/js/bootstrap_4.3.1.js' %} "></script>
-
-    {% block scripts %}
-        {# Extends scrips here#}
-    {% endblock scripts %}
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57"
           href="{% static 'meditation/images/favicon/apple-touch-icon-57x57.png' %}"/>
@@ -63,11 +58,26 @@
 
 
     <link id="theme-style" rel="stylesheet" type="text/css">
-
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0&appId=590976625197762&autoLogAppEvents=1"
+            nonce="Y33xG358"></script>
     {% block title %}
         {# Extends SEO here#}
     {% endblock title %}
+
+    {% block meta %}
+        {#        Extends CSS#}
+    {% endblock meta %}
+
+    {% block style %}
+        {#        Extends CSS#}
+    {% endblock style %}
+
+    {% block scripts %}
+        {# Extends scrips here#}
+    {% endblock scripts %}
+
     <!--    For SEO-->
     {% block seo %}
         {# Extends SEO here#}

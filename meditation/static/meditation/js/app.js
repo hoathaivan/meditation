@@ -4,14 +4,15 @@ let hold_in_progress;
 let text_breath_num;
 let text_breath_title;
 
+let breath_in = 3000;
+let breath_out = 9000;
+let hold_in = 0;
+let hold_out = 0;
+
 $(document).ready(function () {
 
     let mode = 0;
     let second_num = 5000;
-    let breath_in = 3000;
-    let breath_out = 5000;
-    let hold_in = 2000;
-    let hold_out = 2000;
 
     let breathInterval;
     let updateProgressUIInterval;
@@ -89,9 +90,32 @@ $(document).ready(function () {
 
     initTheme();
 
-    initStickyHeader();
-
+    // initStickyHeader();comment-btn
+    $("#comment-btn").click(function () {
+        $('html,body').animate({
+                scrollTop: $(".send-mail").offset().top
+            },
+            'smooth');
+    });
 });
+
+function setBreath(id, them_dot) {
+
+    let breath_text = document.getElementById('breath_text');
+    let breath_ratio = breaths[id].breath_ratio;
+    breath_text.innerText = 'Tỉ lệ hơi thở: ' + breaths[id].breath_ratio;
+    let breath_ratios = breath_ratio.split(':')
+
+    breath_in = breath_ratios[0] * 1000;
+    hold_in = breath_ratios[1] * 1000;
+    breath_out = breath_ratios[2] * 1000;
+    hold_out = breath_ratios[3] * 1000;
+
+    localStorage.setItem('breath', id);
+
+    removeActiveTheme(them_dot);
+    them_dot[id].classList.add('active');
+}
 
 function initStickyHeader() {
     // Get the navbar
@@ -392,6 +416,21 @@ function initBreath() {
     hold_in_progress.css('width', 0 + '%').attr('aria-valuenow', 0);
     hold_out_progress.css('width', 0 + '%').attr('aria-valuenow', 0);
 
+    let them_dot = document.getElementsByClassName('theme-dot-br');
+
+    let breathLocal = localStorage.getItem('breath');
+    if (breathLocal == null) {
+        setBreath(0, them_dot);
+    } else {
+        setBreath(breathLocal, them_dot);
+    }
+
+    for (let i = 0; them_dot.length > i; i++) {
+        them_dot[i].addEventListener('click', evt => {
+            let id = them_dot[i].dataset.id;
+            setBreath(id - 1, them_dot);
+        })
+    }
 }
 
 function initSoundList() {
@@ -433,40 +472,43 @@ function initSoundList() {
 }
 
 function initTheme() {
+    let them_dot = document.getElementsByClassName('theme-dot-th');
+
     let themeLocal = localStorage.getItem('theme');
     if (themeLocal == null) {
-        setTheme('light');
+        setTheme(0, them_dot);
     } else {
-        setTheme(themeLocal);
+        setTheme(themeLocal, them_dot);
     }
 
-    let them_dot = document.getElementsByClassName('theme-dot');
     for (let i = 0; them_dot.length > i; i++) {
         them_dot[i].addEventListener('click', evt => {
-            let mode = them_dot[i].dataset.mode;
-            setTheme(mode);
+            let id = them_dot[i].dataset.id;
+            setTheme(id - 1, them_dot);
         })
     }
 }
 
-
-function setTheme(mode) {
-    let theme = document.getElementById('theme-style');
-    if (mode == 'light') {
-        theme.href = static_url + 'meditation/css/default.css';
+function removeActiveTheme(them_dot) {
+    for (let i = 0; them_dot.length > i; i++) {
+        them_dot[i].classList.remove('active');
     }
+}
 
-    if (mode == 'blue') {
-        theme.href = static_url + 'meditation/css/blue.css';
-    }
 
-    if (mode == 'green') {
-        theme.href = static_url + 'meditation/css/green.css';
-    }
+function setTheme(id, them_dot) {
+    let theme_img = document.getElementById('profile_pic');
+    let profile_text = document.getElementById('profile_text');
+    let bg = $('.header-play');
+    bg.css('background-image', 'url(' + themes[id].background + ')');
+    theme_img.src = themes[id].thumbnail;
+    profile_text.innerText = themes[id].name;
+    // let theme = document.getElementById('theme-style');
+    // if (mode == 'light') {
+    //     theme.href = static_url + 'meditation/css/default.css';
+    // }
+    localStorage.setItem('theme', id);
 
-    if (mode == 'purple') {
-        theme.href = static_url + 'meditation/css/purple.css';
-    }
-    localStorage.setItem('theme', mode);
-
+    removeActiveTheme(them_dot);
+    them_dot[id].classList.add('active');
 }

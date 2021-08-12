@@ -5,9 +5,10 @@ from django import forms
 
 
 class PostFilter(django_filters.FilterSet):
-    headline = CharFilter(field_name='headline', lookup_expr='icontains', label='Headline')
+    headline = CharFilter(field_name='headline', lookup_expr='icontains', label='Tiêu đề')
     tags = django_filters.ModelMultipleChoiceFilter(queryset=Tag.objects.all(),
-                                                    widget=forms.CheckboxSelectMultiple
+                                                    widget=forms.CheckboxSelectMultiple,
+                                                    label='Thẻ'
                                                     )
 
     class Meta:

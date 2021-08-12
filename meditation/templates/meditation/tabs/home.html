@@ -1,0 +1,70 @@
+{% load static %}
+<section>
+    <div class="main-container">
+        <div class="intro-wrapper">
+
+            {% include 'meditation/navbar-home.html' %}
+
+            <div class="left-column">
+                <img id="profile_pic" src="{% static 'meditation/images/thumbnails/moon.jpg' %}">
+                <h5 id="profile_text">Ánh trăng</h5><br>
+                <h5 id="breath_text">Tỉ lệ hơi thở: 3:0:9:0</h5><br>
+                <p id="settings-note">*Chủ đề và tỉ lệ hơi thở sẽ được <br> lưu lại cho lần truy cập
+                    tiếp
+                    theo</p>
+            </div>
+
+            <div class="right-column">
+                <div class="preview-wrapper">
+                    <div id="preview-shadow">
+                        <div id="preview">
+                            <div id="corner-tl" class="corner"></div>
+                            <div id="corner-tr" class="corner"></div>
+                            <h4>Thiền định online</h4>
+                            <p>Mang thiền đến đời sống</p>
+                            <div id="corner-br" class="corner"></div>
+                            <div id="corner-bl" class="corner"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h5 class="preview-title">Chủ đề</h5>
+                <div id="theme-options-wrapper">
+                    {% for theme in data.themes %}
+                        <img data-id="{{ forloop.counter }}" class="theme-dot theme-dot-th"
+                             src="{{ theme.thumbnail.url }}" alt="" title="{{ theme.tool_tip }}">
+                        <script>
+                            themes.push({
+                                name: "{{theme.name}}",
+                                background: "{{ theme.background.url }}",
+                                thumbnail: "{{ theme.thumbnail.url }}"
+                            })
+                        </script>
+
+                    {% endfor %}
+                </div>
+
+                <h5 style="font-weight: bold">Bài tập thở</h5>
+                <div id="theme-options-wrapper">
+                    {% for breath in data.breaths %}
+                        <img data-id="{{ forloop.counter }}" class="theme-dot theme-dot-br"
+                             src="{{ breath.thumbnail.url }}" alt=""
+                             title="{{ breath.tool_tip }} &#013; {{ breath.breath_ratio }}">
+                        <script>
+                            breaths.push({
+                                name: "{{breath.name}}",
+                                thumbnail: "{{ breath.thumbnail.url }}",
+                                breath_ratio: "{{ breath.breath_ratio }}"
+                            })
+                        </script>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+

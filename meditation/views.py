@@ -18,6 +18,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
+import logging
+
+logger = logging.getLogger("mylogger")
 
 
 class IndexView(generic.ListView):
@@ -26,7 +29,9 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return {
-            'posts': Post.objects.filter(active=True, featured=True)[0:3],
+            'breaths': Breath.objects.filter(active=True).order_by('order_num'),
+            'themes': Theme.objects.filter(active=True).order_by('order_num'),
+            'posts': Post.objects.filter(active=True, featured=True)[0:24],
             'songs': Song.objects.all(),
             'sounds': Sound.objects.all()
         }
@@ -38,7 +43,7 @@ def posts(request):
     posts_db = my_filter.qs
 
     page = request.GET.get('page')
-    paginator = Paginator(posts_db, 2)
+    paginator = Paginator(posts_db, 15)
 
     try:
         posts_db = paginator.page(page)
@@ -55,11 +60,13 @@ def posts(request):
 
 
 def post(request, slug):
-    post_db = Post.objects.get(slug=slug)
+    post_db = get_object_or_404(Post, slug=slug)
+    posts_db = Post.objects.filter(tags__in=post_db.tags.all())
     context = {
-        'post': post_db
+        'post': post_db,
+        'posts': posts_db
     }
-    return render(request, 'meditation/post.html', context)
+    return render(request, 'meditation/posts/post-main.html', context)
 
 
 @login_required(login_url='meditation:index')
@@ -79,6 +86,7 @@ def create_post(request):
 def update_post(request, slug):
     post_db = Post.objects.get(slug=slug)
     form = PostForm(instance=post_db)
+
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post_db)
         if form.is_valid():

@@ -5,26 +5,26 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # comment this if you deploy to production
-env = environ.Env()
-environ.Env.read_env()
-SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
-ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
-DB_NAME = env('DB_NAME')
-DB_USER = env('DB_USER')
-DB_PASSWORD = env('DB_PASSWORD')
-DB_HOST = env('DB_HOST')
-DB_POST = env('DB_POST')
+# env = environ.Env()
+# environ.Env.read_env()
+# SECRET_KEY = env('SECRET_KEY')
+# DEBUG = env('DEBUG')
+# ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+# DB_NAME = env('DB_NAME')
+# DB_USER = env('DB_USER')
+# DB_PASSWORD = env('DB_PASSWORD')
+# DB_HOST = env('DB_HOST')
+# DB_POST = env('DB_POST')
 
 # comment this if you deploy to production
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-# DEBUG = os.environ.get('DEBUG')
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
-# DB_NAME = os.environ.get('DB_NAME')
-# DB_USER = os.environ.get('DB_USER')
-# DB_PASSWORD = os.environ.get('DB_PASSWORD')
-# DB_HOST = os.environ.get('DB_HOST')
-# DB_POST = os.environ.get('DB_POST')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+DB_NAME = os.environ.get('DB_NAME')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+DB_POST = os.environ.get('DB_POST')
 
 # Application definition
 
@@ -84,33 +84,26 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # local database
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'meditation_local',
+#         'USER': 'postgres',
+#         'PASSWORD': 'docker',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
 #     }
 # }
 
+# production database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'meditation_local',
-        'USER': 'postgres',
-        'PASSWORD': 'docker',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_POST,
     }
 }
-
-# production database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': DB_NAME,
-#         'USER': DB_USER,
-#         'PASSWORD': DB_PASSWORD,
-#         'HOST': DB_HOST,
-#         'PORT': DB_POST,
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -157,17 +150,15 @@ BOOTSTRAP5 = {
 # URL to use when referring to static files located in STATIC_ROOT.
 STATIC_URL = '/static/'
 
-# URL that handles the media served from MEDIA_ROOT
-MEDIA_URL = '/media/'
-
 # This setting defines the additional locations the staticfiles
 # app will traverse if the FileSystemFinder finder is enabled
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+# URL that handles the media served from MEDIA_ROOT
+MEDIA_URL = '/media/'
 # The absolute path to the directory where collectstatic
 # will collect static files for deployment
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -186,13 +177,13 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3-ap-southeast-1.amazonaws.com'
 
 # Boto 3
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

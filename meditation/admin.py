@@ -22,10 +22,19 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
 
 
+class ThemeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'order_num')
+
+
+class BreathAdmin(admin.ModelAdmin):
+    list_display = ('name', 'order_num')
+
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
 admin.site.register(Song)
 admin.site.register(Sound)
 admin.site.register(Post)
 admin.site.register(Tag)
-admin.site.register(Theme)
+admin.site.register(Theme, ThemeAdmin)
+admin.site.register(Breath, BreathAdmin)

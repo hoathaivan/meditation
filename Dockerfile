@@ -25,3 +25,5 @@ ADD . .
 
 # for heroku
 CMD gunicorn core.wsgi:application --bind 0.0.0.0:$PORT
+
+#docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres

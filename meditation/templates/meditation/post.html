@@ -1,5 +1,9 @@
 {% extends 'meditation/base/main.html' %}
 {% load static %}
+{% block title %}
+    <title>tesst</title>
+{% endblock title %}
+
 {% block content %}
     <style type="text/css">
         img {
@@ -7,11 +11,33 @@
             object-fit: cover;
         }
     </style>
-    <div class="main-container">
-        <img src="{{ post.thumbnail.url }}">
+    <section>
+        <div class="main-container">
+            <img src="{{ post.thumbnail.url }}">
 
-        <h1>{{ post.headline }}</h1>
-        <h4>{{ post.sub_headline }}</h4>
-        <p>{{ post.body | safe }}</p>
-    </div>
+            <h1>{{ post.headline }}</h1>
+            <h4>{{ post.sub_headline }}</h4>
+            <p>{{ post.body | safe }}</p>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="main-container">
+            <div class="about-wrapper">
+
+                {% include 'meditation/elements/contact-form.html' %}
+
+                <div class="comment">
+                    <h4>Bình luận</h4>
+                    <div class="fb-comments" data-href="http://www.thiendinh-online.com/" data-width=""
+                         data-numposts="5" lazy="true" data-order-by="reverse_time"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% include 'meditation/elements/footer.html' %}
+
 {% endblock content %}

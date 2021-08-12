@@ -6,6 +6,7 @@ from django.contrib import admin
 from django.utils import timezone
 from django.utils.text import slugify
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.contrib.auth.models import User
 
 
 # Meditation app models
@@ -37,29 +38,49 @@ class Tag(models.Model):
         return self.name
 
 
+class Breath(models.Model):
+    name = models.CharField(max_length=200)
+    tool_tip = models.CharField(max_length=500)
+    thumbnail = models.ImageField(upload_to='breaths', default='breaths/placeholder.png')
+    breath_ratio = models.CharField(max_length=60)
+    order_num = models.IntegerField(default=0)
+    active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name + ' ' + str(self.order_num)
+
+
 class Theme(models.Model):
     name = models.CharField(max_length=200)
     tool_tip = models.CharField(max_length=500)
     background = models.ImageField(upload_to='themes', default='themes/placeholder.png')
+    thumbnail = models.ImageField(upload_to='themes/thumbnails', default='themes/thumbnails/placeholder.png')
     active = models.BooleanField(default=False)
+    order_num = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.name
+        return self.name + ' ' + str(self.order_num)
 
 
 class Post(models.Model):
     headline = models.CharField(max_length=200)
-    sub_headline = models.CharField(max_length=200, null=True, blank=True)
-    thumbnail = models.ImageField(null=True, blank=True, upload_to='posts',
-                                  default='posts/placeholder.png')
+    sub_headline = models.CharField(max_length=512, null=True, blank=True)
+    note = models.CharField(max_length=1024, null=True, blank=True)
+    thumbnail = models.ImageField(null=True, blank=True, upload_to='posts/thumbnails',
+                                  default='posts/thumbnails/placeholder.png')
+    background = models.ImageField(null=True, blank=True, upload_to='posts/backgrounds',
+                                   default='posts/backgrounds/placeholder.png')
     body = RichTextUploadingField(null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
+    publish_date = models.DateTimeField(default=timezone.now)
     active = models.BooleanField(default=False)
     featured = models.BooleanField(default=False)
 
     tags = models.ManyToManyField(Tag, null=True)
 
     slug = models.SlugField(null=True, blank=True)
+
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.headline

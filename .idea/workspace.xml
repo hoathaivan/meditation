@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9f28df5a-aa95-407d-b661-91448f390acd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/settings/settings_dev.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0010_breath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0011_auto_20210602_1640.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0012_alter_breath_thumbnail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0013_breath_active.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0014_theme_thumbnail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0015_alter_breath_breath_ratio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0016_alter_breath_breath_ratio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0017_auto_20210606_1144.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0018_auto_20210606_1702.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0019_auto_20210606_1713.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0020_post_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0021_alter_post_background.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/migrations/0022_alter_post_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/static/meditation/css/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/static/meditation/css/posts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/static/meditation/images/thumbnails/moon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/static/meditation/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/static/meditation/js/jquery.toc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/static/meditation/js/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/contact-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/footer-child.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/home-comment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/home-tabs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/like-home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/player.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/elements/post-element.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/posts/post-grid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/posts/post-main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/posts/posts-main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/tabs/benefit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/tabs/breath.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/tabs/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/tabs/meditation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meditation/templates/meditation/tabs/question.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/basic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/blance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/candle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/energy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/reduce-eat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/relax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/remove-mind.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/breaths/smile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/basic.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/blance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/candle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/energy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/reduce-eat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/relax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/remove-mind.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/breaths/smile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/backgrounds/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/backgrounds/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/blance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/energy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/reduce-eat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/relax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/relax_tcpNy1t.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/relax_wRWVzGt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/remove-mind.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/remove-mind_YHpv9eq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/smile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/smile_H28DWNm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/smile_z7w3tlb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/posts/thumbnails/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/bird-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/blance-rock.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/candle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/cloud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/flowers-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/forest.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/night.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/rainbow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/star.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/bird-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/blance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/candle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/cloud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/dawn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/flowers-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/forest.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/moon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/night.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/rainbow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/star.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/twilight.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/water-drop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/waterfall.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/thumbnails/winter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/water-drop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/waterfall.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/media/themes/winter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/backgrounds/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/backgrounds/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/blance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/energy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/meditation-logo3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/reduce-eat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/relax.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/relax_tcpNy1t.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/relax_wRWVzGt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/remove-mind.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/remove-mind_YHpv9eq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/smile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/smile_H28DWNm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/smile_z7w3tlb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/posts/thumbnails/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/bird-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/blance-rock.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/candle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/cloud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/dawn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/flowers-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/forest.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/moon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/night.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/rainbow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/star.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/beach.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/bird-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/blance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/bufterfly.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/candle.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/cloud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/dawn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/flowers-flying.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/forest.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/moon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/night.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/rainbow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/star.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/twilight.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/water-drop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/waterfall.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/thumbnails/winter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/twilight.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/water-drop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/waterfall.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/themes/winter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/meditation/images/thumbnails/moon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/posts/placeholder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9e455fd8-c8d8-4911-9313-f2216a22935b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0f36d85-6fa7-474d-967b-7d02a67538c7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0f36d85-6fa7-474d-967b-7d02a67538c7/storage_v2/_src_/database/meditation_local.SnFeYw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0f36d85-6fa7-474d-967b-7d02a67538c7/storage_v2/_src_/database/meditation_local.SnFeYw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0f36d85-6fa7-474d-967b-7d02a67538c7/storage_v2/_src_/database/meditation_local.SnFeYw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0f36d85-6fa7-474d-967b-7d02a67538c7/storage_v2/_src_/database/meditation_local.SnFeYw/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/meditation-heroku-deployment.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/meditation-heroku-deployment.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/settings/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/settings/storage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/static/meditation/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/static/meditation/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/static/meditation/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/static/meditation/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/templates/meditation/base/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/templates/meditation/base/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/templates/meditation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/templates/meditation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/templates/meditation/navbar-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/templates/meditation/navbar-home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/templates/meditation/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/templates/meditation/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/templates/meditation/posts.html" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/templates/meditation/posts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meditation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/meditation/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/posts/meditation-logo3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/media/posts/meditation-logo3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/posts/meditation-logo3x_-_Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/posts/meditation-logo3x_-_Copy_mjj1xqH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/media/posts/meditation-logo3x_Um2lzkk.png" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/posts/meditation-logo3x.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1tbE0FWKPNdREZ0HbrJV75xDFv0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/meditation/static/meditation/js" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.python" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySupportGeventDebugging" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\MeditationTV\WebApplication\meditation-heroku-deployment\meditation\static\meditation\js" />
+      <recent name="I:\MeditationTV\WebApplication\meditation-heroku-deployment\static" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="med" type="Python.DjangoServer" factoryName="Django server">
+      <module name="meditation-heroku-deployment" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="core.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f28df5a-aa95-407d-b661-91448f390acd" name="Default Changelist" comment="" />
+      <created>1623029177944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623029177944</updated>
+      <workItem from="1623029179272" duration="4186000" />
+      <workItem from="1623198868392" duration="1534000" />
+      <workItem from="1623211699943" duration="2524000" />
+      <workItem from="1623407198171" duration="1176000" />
+      <workItem from="1623419297436" duration="9887000" />
+      <workItem from="1623490525593" duration="2376000" />
+      <workItem from="1623592945671" duration="5731000" />
+      <workItem from="1623674127247" duration="8475000" />
+      <workItem from="1623754552385" duration="2111000" />
+      <workItem from="1624358576156" duration="4044000" />
+      <workItem from="1624708777779" duration="184000" />
+      <workItem from="1624780452739" duration="3469000" />
+      <workItem from="1626259588573" duration="51000" />
+      <workItem from="1627916959006" duration="1323000" />
+      <workItem from="1628308355883" duration="12849000" />
+      <workItem from="1628389859281" duration="1193000" />
+      <workItem from="1628395132358" duration="310000" />
+      <workItem from="1628411189315" duration="2591000" />
+      <workItem from="1628609744183" duration="1531000" />
+      <workItem from="1628727744593" duration="1906000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
